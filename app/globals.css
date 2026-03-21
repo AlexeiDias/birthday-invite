@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --black:   #0d0d0d;
+  --gold:    #c9a84c;
+  --gold2:   #e8c96a;
+  --cream:   #f5ead8;
+  --white:   #ffffff;
+  --red:     #8b1a1a;
+  --border:  rgba(201,168,76,0.6);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--gold); color: var(--black); }

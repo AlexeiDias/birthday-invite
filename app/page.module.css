@@ -1,0 +1,616 @@
+/* ═══════════════════════════════════════════════
+   MAIN
+═══════════════════════════════════════════════ */
+.main {
+  min-height: 100vh;
+  background: #0d0d0d;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background:
+    radial-gradient(ellipse at center, #1a1408 0%, #0d0d0d 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle grain texture */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.9rem;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Ornament row ── */
+.ornamentTop {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+.ornLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+}
+.ornDiamond {
+  color: #c9a84c;
+  font-size: 0.7rem;
+}
+
+/* ── Labels ── */
+.premiumLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: #c9a84c;
+  text-transform: uppercase;
+}
+
+/* ── VINTAGE big word ── */
+.vintage {
+  font-family: 'Rye', serif;
+  font-size: clamp(3.8rem, 18vw, 6rem);
+  color: #ffffff;
+  line-height: 1;
+  text-shadow:
+    0 0 30px rgba(201,168,76,0.35),
+    3px 3px 0 rgba(201,168,76,0.12);
+  letter-spacing: 0.04em;
+}
+
+/* ── Scroll banner ── */
+.scrollBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 90%;
+}
+.scrollLeft,
+.scrollRight {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c9a84c);
+}
+.scrollRight {
+  background: linear-gradient(90deg, #c9a84c, transparent);
+}
+.bannerText {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #c9a84c;
+  white-space: nowrap;
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 0.3rem 0.8rem;
+}
+
+/* ── Medallion ── */
+.medallion {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid #c9a84c;
+  box-shadow:
+    0 0 0 6px rgba(201,168,76,0.08),
+    0 0 0 8px rgba(201,168,76,0.15),
+    0 0 30px rgba(201,168,76,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+  background: radial-gradient(circle, #1c1508 0%, #0d0d0d 100%);
+}
+.medallionRing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.medallionTop {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: #c9a84c;
+}
+.medallionBig {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(201,168,76,0.5);
+}
+.medallionBot {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: #c9a84c;
+}
+
+/* ── Aged row ── */
+.agedRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.6rem, 3vw, 0.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+.agedDot { color: #c9a84c; font-size: 0.6rem; }
+
+/* ── Legend banner ── */
+.legendBanner {
+  background: #c9a84c;
+  width: 100%;
+  padding: 0.65rem 0;
+  clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
+}
+.legendText {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 5vw, 1.4rem);
+  font-weight: 900;
+  color: #0d0d0d;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.scrollHint {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(201,168,76,0.5);
+  margin-top: 0.5rem;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════════════ */
+.section {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.sectionTitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1rem, 5vw, 1.3rem);
+  font-weight: 700;
+  color: #c9a84c;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════
+   DETAIL CARDS
+═══════════════════════════════════════════════ */
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.detailCard {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 4px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+.detailIcon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+.detailLabel {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #c9a84c;
+  font-weight: 700;
+}
+.detailValue {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.2rem 0 0.1rem;
+}
+.detailSub {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: rgba(245,234,216,0.6);
+}
+
+/* ── Location ── */
+.locationBox {
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 4px;
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  background: rgba(201,168,76,0.04);
+  margin-bottom: 1.5rem;
+}
+.locationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+.locationTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #c9a84c;
+}
+.locationAddr {
+  font-family: 'IM Fell English', serif;
+  font-size: 1rem;
+  color: #f5ead8;
+  line-height: 1.6;
+}
+.locationBtns {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.btnGold {
+  background: #c9a84c;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 2px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btnGold:hover { opacity: 0.85; }
+.btnOutline {
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  background: transparent;
+  border-radius: 2px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btnOutline:hover { background: #c9a84c; color: #0d0d0d; }
+
+/* ── Menu ── */
+.menuBox {
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 4px;
+  padding: 1.5rem 1rem;
+  background: rgba(201,168,76,0.03);
+}
+.menuHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.menuTitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c9a84c;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+}
+.menuGrid {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.menuCol { flex: 1; text-align: center; }
+.menuColTitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  color: #c9a84c;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.menuItem {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.95rem;
+  color: #f5ead8;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+.menuDivider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(201,168,76,0.3);
+}
+
+/* ═══════════════════════════════════════════════
+   GUEST LIST
+═══════════════════════════════════════════════ */
+.guestBlock {
+  margin-bottom: 1.5rem;
+}
+.guestGroupLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: #c9a84c;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.guestList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.guestName {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.9rem;
+  color: #f5ead8;
+  background: rgba(201,168,76,0.07);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 2px;
+  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.05em;
+}
+.guestKid {
+  background: rgba(139,26,26,0.15);
+  border-color: rgba(139,26,26,0.4);
+  color: #ffccc0;
+}
+.dividerOrnament {
+  text-align: center;
+  color: rgba(201,168,76,0.5);
+  letter-spacing: 0.3em;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+}
+
+/* ═══════════════════════════════════════════════
+   RSVP
+═══════════════════════════════════════════════ */
+.rsvpNote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(245,234,216,0.7);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.rsvpNote strong { color: #c9a84c; font-style: normal; }
+
+.rsvpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 1.5rem 1.2rem;
+  background: rgba(201,168,76,0.04);
+}
+.rsvpInput {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  font-family: 'IM Fell English', serif;
+  font-size: 1rem;
+  color: #f5ead8;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.rsvpInput::placeholder { color: rgba(245,234,216,0.35); }
+.rsvpInput:focus { border-color: #c9a84c; }
+
+.rsvpChoices {
+  display: flex;
+  gap: 0.75rem;
+}
+.choiceBtn {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 2px;
+  color: rgba(245,234,216,0.7);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.choiceYes {
+  background: rgba(201,168,76,0.2);
+  border-color: #c9a84c;
+  color: #c9a84c;
+}
+.choiceNo {
+  background: rgba(139,26,26,0.2);
+  border-color: rgba(139,26,26,0.6);
+  color: #ff9a9a;
+}
+.rsvpError {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+}
+
+.sendBtn {
+  padding: 0.85rem;
+  background: #c9a84c;
+  color: #0d0d0d;
+  border: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.sendBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+.sendBtn:not(:disabled):hover { opacity: 0.85; }
+
+.rsvpThanks {
+  text-align: center;
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 2rem 1.5rem;
+  background: rgba(201,168,76,0.04);
+}
+.thanksIcon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.thanksTitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  color: #c9a84c;
+  margin-bottom: 0.5rem;
+}
+.thanksSub {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(245,234,216,0.7);
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footerText {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: rgba(201,168,76,0.6);
+  text-transform: uppercase;
+}
+.footerSub {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(245,234,216,0.4);
+}
+
+/* ═══════════════════════════════════════════════
+   MUSIC WIDGET
+═══════════════════════════════════════════════ */
+.musicWidget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.musicBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #c9a84c;
+  border: none;
+  color: #0d0d0d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.35);
+  transition: transform 0.2s, opacity 0.2s;
+  font-family: serif;
+}
+.musicBtn:hover { transform: scale(1.08); opacity: 0.9; }
+
+.musicPanel {
+  background: #111;
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 4px;
+  padding: 0.75rem;
+  width: 272px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.musicTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #c9a84c;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.musicHint {
+  font-size: 0.62rem;
+  color: rgba(245,234,216,0.35);
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-family: monospace;
+}
