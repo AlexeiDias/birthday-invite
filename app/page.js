@@ -8,7 +8,7 @@ const ADULTS = [
   'Gabriel','Antonio','Lindsay','Ravi','Regi',
   'Amanda','Thiago','Manu','Eddy'
 ];
-const KIDS = ['Joy','Zen','Noah','Ethan','Maya','Maris','Davina','Yosi','Tula','Thiago Girls'];
+const KIDS = ['Joy','Zen','Noah','Ethan','Maya','Manu','Maris','Davina','Yosi','Tula','Thiago Girls'];
 
 // ── YouTube Video ID ─────────────────────────────────────────────────────────
 const YT_VIDEO = 'T54ID6d2r5g';
