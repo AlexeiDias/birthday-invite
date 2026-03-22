@@ -85,11 +85,11 @@ export default function Home() {
           </div>
 
           <div className={styles.agedRow}>
-            <span className={styles.agedWord}>THE MAN</span>
+            <span className={styles.agedWord}>Family</span>
             <span className={styles.agedDot}>✦</span>
-            <span className={styles.agedWord}>THE MYTH</span>
+            <span className={styles.agedWord}>Friends</span>
             <span className={styles.agedDot}>✦</span>
-            <span className={styles.agedWord}>THE LEGEND</span>
+            <span className={styles.agedWord}>Memories</span>
           </div>
 
           <div className={styles.legendBanner}>
