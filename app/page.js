@@ -6,9 +6,9 @@ const ADULTS = [
   'Tais','Alexei','Carla','Rodrigo','Ana Claudia',
   'Tuka','Ana','Sabrina','Gustavo','Juliana',
   'Gabriel','Antonio','Lindsay','Ravi','Regi',
-  'Amanda','Thiago','Manu','Eddy'
+  'Amanda','Thiago','Manu','Eddy','David','Naa','Antonio and KOKO'
 ];
-const KIDS = ['Joy','Zen','Noah','Ethan','Maya','Manu','Maris','Davina','Yosi','Tula','Thiago Girls'];
+const KIDS = ['Joy','Zen','Noah','Ethan','Maya','Manu','Maris','Davina','Yosi','Tula','Thiago Girls','Ryan','Adonis','Aki'];
 
 // ── YouTube Video ID ─────────────────────────────────────────────────────────
 const YT_VIDEO = 'T54ID6d2r5g';
